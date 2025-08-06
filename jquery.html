@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Jquery</title>
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+        <script>
+            // $(document).ready(function(){
+            //     $("body").html("<p>동적데이터<p>")
+            //     $("body p").css("font-size","3rem")
+            // })
+        </script>
+    </head>
+    <body>
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+        <script>
+        // <!-- $("body").html("<p>동적데이터<p>");
+        // $("body p").css("color","red");
+        // $("body p").css("font-size","3rem")
+
+        //  최적화 작성 가능 
+        // $("body").html("<p>동적데이터<p>");
+        // $("body p").css("color","red").css("font-size","3rem")
+
+        // json 기법, 쌍따옴표만 가능
+        $("body").html("<p><span>동적데이터</span>라고 하지<p>");
+        $("body p").css({
+        // key 부분 ↓ 
+            color:"red",
+            fontSize:"3rem",
+            backgroundColor:"gray"
+        });
+        $("p span").css({
+            color:"white",
+            backgroundColor:"black",
+            cursor: "pointer"
+        }).click(function(){
+            alert("드디어 해방");
+        })
+        // key에 하이픈(-)안됨, 대신 대문자 시작
+        // .click이 눌릴 때 까지 기다리는 것 = function
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script>
+        // 이중 배열 x
+        $(document).ready(function(){
+            const navi = ["네이버","다음","구글"];
+            const navia = [
+                "https://www.naver.com",
+                "https://www.daum.net",
+                "https://www.google.com" 
+            ];
+
+            let gnbli = ``;
+
+            for(idx of navi){
+                gnbli += `<li>
+                    <a href= "${navia[idx]}">
+                        ${[idx]}
+                    <a>
+                    </li>`;
+            }
+
+            $("#gnb").html(gnbli);
+        })
+
+        // 이중 배열 o 
+
+        $(document).ready(function(){
+            const navi = [
+            ["네이버", "https://www.naver.com"],
+            ["다음", "https://www.daum.net"],
+            ["구글", "https://www.google.com"]
+        ];
+            let gnbli = ``;
+
+            for(idx of navi){
+                gnbli += `<li>${[idx]}</li>`;
+            }
+
+            $("#gnb").html(gnbli);
+        })
+
+    </script>
+</head>
+<body>
+    <ul id="gnb">
+
+    </ul>
+</body>
+</html>
