@@ -10,6 +10,7 @@
     <script>
         $(document).ready(function(){
             // DB가 준비된 케이스는 동적개체로 만들어야함
+            // 정적 개체는 html 태그에 직접 집어넣는 방식
             const naverdb = [
                 {
                 title : "네이버",
@@ -36,7 +37,8 @@
                 // a태그들은 무남독녀 외동딸, 형제가 없음 그래서 전부 0번 처리
                 // a의 부모요소 li가 나옴
             $("#gnb li a").each(function(){
-                $(this).html(naverdb[$(this).parent.index()].title)
+                $(this).html( $(this).parent().data("nm"))
+                $(this).attr("href", $(this).data("href"))
             })
                 // each -> 각각 처리하세요.
         })
@@ -45,10 +47,17 @@
 </head>
 <body>
     <ul id="gnb">
-        <li class="gnbli1"><a href="">1</a></li>
-        <li class="gnbli2"><a href="">2</a></li>
-        <li class="gnbli3"><a href="">3</a></li>
-        <li class="gnbli4"><a href="">4</a></li>
+        <li class="gnbli1"
+        data-nm="네이버"
+        data-hret="http://www.naver.com">
+            <a href="">1</a>
+        </li>
+        <li class="gnbli2"
+        data-nm="다음"
+        data-hret="http://www.daum.net">
+            <a href="">2</a>
+        </li>
+        
     </ul>
 </body>
 </html>
