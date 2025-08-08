@@ -31,17 +31,18 @@
                 target : "_blank"
                 }
             ]
-                // each -> 하나하나 뜯어내는 속성 안에 for each가 숨어있음
-                // this는 변수이기 때문에 쌍따옴표, 홀따옴표 쓰면 안됨
-                // index = 순번, 바닐라에는 없음
-                // a태그들은 무남독녀 외동딸, 형제가 없음 그래서 전부 0번 처리
-                // a의 부모요소 li가 나옴
-            $("#gnb li a").each(function(){
-                $(this).html( $(this).parent().data("nm"))
-                $(this).attr("href", $(this).data("href"))
-            })
-                // each -> 각각 처리하세요.
+            
+            let navitag = "";
+
+            for( x of naverdb ){
+                navigag += ``;
+            }
+            
+            $("#gnb").html(navitag)
+
         })
+                
+        
         
     </script>
 </head>
