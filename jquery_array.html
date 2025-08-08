@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array 속성 배우기</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+    crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            // DB가 준비된 케이스는 동적개체로 만들어야함
+            const naverdb = [
+                {
+                title : "네이버",
+                href : "http://www.naver.com",
+                class : "text-dark naver",
+                target : "_blank"
+                },
+                {
+                title : "다음",
+                href : "http://www.daum.net",
+                class : "text-dark daum",
+                target : "_blank"
+                },
+                {
+                title : "구글",
+                href : "http://www.google.com",
+                class : "text-dark google",
+                target : "_blank"
+                }
+            ]
+                // each -> 하나하나 뜯어내는 속성 안에 for each가 숨어있음
+                // this는 변수이기 때문에 쌍따옴표, 홀따옴표 쓰면 안됨
+                // index = 순번, 바닐라에는 없음
+                // a태그들은 무남독녀 외동딸, 형제가 없음 그래서 전부 0번 처리
+                // a의 부모요소 li가 나옴
+            $("#gnb li a").each(function(){
+                $(this).html(naverdb[$(this).parent.index()].title)
+            })
+                // each -> 각각 처리하세요.
+        })
+        
+    </script>
+</head>
+<body>
+    <ul id="gnb">
+        <li class="gnbli1"><a href="">1</a></li>
+        <li class="gnbli2"><a href="">2</a></li>
+        <li class="gnbli3"><a href="">3</a></li>
+        <li class="gnbli4"><a href="">4</a></li>
+    </ul>
+</body>
+</html>
