@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+    crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            const naverdb = {
+                href : "http://www.naver.com",
+                class : "text-dark naver",
+                target : "_blank"
+            }
+            $("#gnb .gnbli3 a")
+            .html("네이버")
+            .attr(naverdb)
+        
+            const daumdb = {
+                href : "http://www.daum.net",
+                class : "text-dark daum",
+                target : "_blank"
+            }
+            $("#gnb .gnbli2 a")
+            .html("다음")
+            .attr(daumdb)
+        })
+    </script>
+</head>
+<body>
+    <ul id="gnb">
+        <li class="gnbli1"><a href="">1</a></li>
+        <li class="gnbli2"><a href="">2</a></li>
+        <li class="gnbli3"><a href="">3</a></li>
+        <li class="gnbli4"><a href="">4</a></li>
+    </ul>
+</body>
+</html>

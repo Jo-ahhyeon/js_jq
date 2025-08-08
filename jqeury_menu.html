@@ -7,45 +7,27 @@
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"
     integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script>
-        // 이중 배열 x
         $(document).ready(function(){
-            const navi = ["네이버","다음","구글"];
-            const navia = [
-                "https://www.naver.com",
-                "https://www.daum.net",
-                "https://www.google.com" 
-            ];
-
-            let gnbli = ``;
-
-            for(idx of navi){
-                gnbli += `<li>
-                    <a href= "${navia[idx]}">
-                        ${[idx]}
-                    <a>
-                    </li>`;
-            }
-
-            $("#gnb").html(gnbli);
-        })
-
-        // 이중 배열 o 
-
-        $(document).ready(function(){
+        // 배열을 객체로 바꾼 형태
             const navi = [
-            ["네이버", "https://www.naver.com"],
-            ["다음", "https://www.daum.net"],
-            ["구글", "https://www.google.com"]
-        ];
+                { name: "네이버", url: "https://www.naver.com" },
+                { name: "다음", url: "https://www.daum.net" },
+                { name: "구글", url: "https://www.google.com" }
+            ];
+            
             let gnbli = ``;
 
-            for(idx of navi){
-                gnbli += `<li>${[idx]}</li>`;
-            }
+                for(valueobj of navi){
+                    gnbli += `<li>
+                        <a href="${valueobj.url}">
+                            ${valueobj.name}
+                        </a>
+                        </li>`;
+                }
 
-            $("#gnb").html(gnbli);
-        })
-
+                $("#gnb").html(gnbli);
+    
+        });
     </script>
 </head>
 <body>
